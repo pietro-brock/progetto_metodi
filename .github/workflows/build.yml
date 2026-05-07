@@ -36,6 +36,6 @@ jobs:
 
       # Upload coverage su Coveralls
       - name: Upload coverage to Coveralls
-        run: mvn jacoco:report coveralls:report -f roman-number/pom.xml
+        run: mvn jacoco:report coveralls:report -f roman-number/pom.xml -D repoToken=${{ secrets.COVERALLS_REPO_TOKEN }}
         env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }} 
