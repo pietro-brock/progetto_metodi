@@ -6,13 +6,11 @@
   <artifactId>roman-number</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>roman-number</name>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
   </properties>
-
   <dependencies>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -21,10 +19,8 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
   <build>
     <plugins>
-
       <!-- Compilazione -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -35,15 +31,13 @@
           <target>17</target>
         </configuration>
       </plugin>
-
       <!-- Esecuzione dei test JUnit 5 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.2.5</version>
       </plugin>
-
-      <!-- Code coverage con JaCoCo (necessario per Coveralls) -->
+      <!-- Code coverage con JaCoCo -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -85,15 +79,7 @@
           </execution>
         </executions>
       </plugin>
-
-      <!-- Coveralls per pubblicare il coverage -->
-      <plugin>
-        <groupId>org.eluder.coveralls</groupId>
-        <artifactId>coveralls-maven-plugin</artifactId>
-        <version>4.3.0</version>
-      </plugin>
-
-      <!-- Analisi statica con Checkstyle - fallisce la build se ci sono violazioni -->
+      <!-- Analisi statica con Checkstyle -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
@@ -111,14 +97,11 @@
           <configLocation>checkstyle.xml</configLocation>
           <failsOnError>true</failsOnError>
           <failOnViolation>true</failOnViolation>
-          <!-- Checkstyle applicato solo al codice di produzione, non ai test -->
           <sourceDirectories>
             <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
           </sourceDirectories>
         </configuration>
       </plugin>
-
     </plugins>
   </build>
-
 </project>
